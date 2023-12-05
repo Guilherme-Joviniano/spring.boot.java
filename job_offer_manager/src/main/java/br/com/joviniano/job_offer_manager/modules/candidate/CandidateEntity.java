@@ -3,17 +3,19 @@ package br.com.joviniano.job_offer_manager.modules.candidate;
 import java.util.UUID;
 
 import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Pattern;
 
 public class CandidateEntity {
   private UUID id;
-  
+
   @Email(message = "The field (email) must to contains a valid e-mail")
   private String email;
 
-  @Pattern(regexp = "^(?!\\s*$).+", message = "The field [username] must not contains spaces")
+  @NotBlank()
+  @Pattern(regexp = "\\S+", message = "The field [username] must not contains spaces")
   private String name;
-  
+
   private String password;
   private String description;
   private String curriculum;
