@@ -12,8 +12,8 @@ import jakarta.validation.Valid;
 @RequestMapping("/candidates")
 public class CandidateController {
 
-  @PostMapping("/")
-  public void create(@Valid @RequestBody CandidateEntity candidateEntity)  {
+  @PostMapping("")
+  public void create(@Valid @RequestBody CandidateEntity candidateEntity) {
     System.out.println(candidateEntity.getEmail());
   }
 
